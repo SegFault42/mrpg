@@ -6,7 +6,7 @@
 /*   By: qhonore <qhonore@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 22:27:54 by qhonore           #+#    #+#             */
-/*   Updated: 2016/09/06 09:47:51 by qhonore          ###   ########.fr       */
+/*   Updated: 2016/09/07 05:02:45 by qhonore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,7 @@ int			key_pressed(int key, void *env)
 	if (key == 123)
 		e->player.key = 1;
 	if (key == 123 || key == 124 || key == 125 || key == 126)
-	{
-		if (e->event.end)
-			e->event.type = 0;
 		e->player.pos = e->player.key;
-	}
 	expose_hook((void*)e);
 	return (1);
 }

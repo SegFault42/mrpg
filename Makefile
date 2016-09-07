@@ -6,7 +6,7 @@
 #    By: qhonore <qhonore@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/10 16:05:27 by qhonore           #+#    #+#              #
-#    Updated: 2016/09/06 06:24:57 by qhonore          ###   ########.fr        #
+#    Updated: 2016/09/07 04:51:04 by qhonore          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC_PATH = ./include/ ./libft/ ./minilibx_macos/
 LIB_PATH = ./libft/ ./minilibx_macos/
 
 SRC_NAME =	main.c event.c expose_hook.c key_hook.c \
-			minimap.c struct.c
+			minimap.c struct.c mlx_str.c player.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAME = -lft -lmlx -lm
 NAME = rpg_0

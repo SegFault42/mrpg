@@ -6,7 +6,7 @@
 /*   By: qhonore <qhonore@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 00:17:17 by qhonore           #+#    #+#             */
-/*   Updated: 2016/09/06 09:35:40 by qhonore          ###   ########.fr       */
+/*   Updated: 2016/09/07 05:02:53 by qhonore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_img		t_img;
 typedef struct s_keys		t_keys;
 typedef struct s_player		t_player;
 typedef struct s_event		t_event;
+typedef struct s_enemy		t_enemy;
 typedef struct s_env		t_env;
 
 struct		s_vect2d
@@ -78,13 +79,23 @@ struct		s_player
 	int		att;
 	int		def;
 	int		col;
+	int		lvl;
+	int		xp;
 };
 
 struct		s_event
 {
 	int		type;
 	int		pos;
-	int		end;
+};
+
+struct		s_enemy
+{
+	int		life;
+	int		max;
+	int		att;
+	int		def;
+	int		xp;
 };
 
 struct		s_env
@@ -95,6 +106,7 @@ struct		s_env
 	t_player	player;
 	t_keys		key;
 	t_event		event;
+	t_enemy		enemy;
 };
 
 t_vect2d	set_vect2d(double x, double y);
@@ -108,5 +120,9 @@ int			window_destroyed(void *env);
 int			expose_hook(void *env);
 
 void		img_put_pixel(t_env *d, t_img *i, t_vect2i p, int c);
+void		mlx_putcurval(t_env *e, t_vect2i pos, int color, long nb, long max);
+void		mlx_putnbr(t_env *e, t_vect2i pos, int color, long nb);
+
+void		player_addxp(t_env *e);
 
 #endif

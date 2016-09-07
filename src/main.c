@@ -6,7 +6,7 @@
 /*   By: qhonore <qhonore@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 11:49:57 by qhonore           #+#    #+#             */
-/*   Updated: 2016/09/06 09:35:50 by qhonore          ###   ########.fr       */
+/*   Updated: 2016/09/07 06:47:09 by qhonore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ static void	launch_rpg(t_env *e)
 	e->player.max = 10;
 	e->player.att = 4;
 	e->player.def = 0;
+	e->player.lvl = 1;
+	e->player.xp = 0;
 	e->player.col = 0xFFFFFF;
-	e->event.type = 0;
 	e->event.pos = 0;
 	srand(time(NULL));
-	// mlx_hook(e->win, KEYPRESS, KEYPRESS_MASK, key_pressed, e);
-	// mlx_hook(e->win, KEYRELEASE, KEYRELEASE_MASK, key_released, e);
 	mlx_key_hook(e->win, key_pressed, (void*)e);
 	mlx_hook(e->win, DESTROYNOTIFY, STRUCTURE_NOTIFY_MASK, window_destroyed, e);
 	mlx_loop_hook(e->mlx, apply_event, e);
